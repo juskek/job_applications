@@ -1,0 +1,3 @@
+# ignore env variables for security
+bindings.d.ts
+env.ts

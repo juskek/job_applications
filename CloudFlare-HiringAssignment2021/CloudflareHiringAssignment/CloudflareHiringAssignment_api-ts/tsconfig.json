@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "alwaysStrict": true,
+    "strict": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    // resolveJsonModuel and esModuleInterop set to true to import json file 
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": [
+      "@cloudflare/workers-types", // 1. cannot find type def file, npm install
+      // in node_modules 
+      "@types/jest", // js testing
+      "@types/service-worker-mock" // mocking server response without creating one
+    ]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "test"]
+}
