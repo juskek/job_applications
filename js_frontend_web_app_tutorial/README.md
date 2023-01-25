@@ -5,11 +5,18 @@
 * No third-party frameworks, e.g. jQuery/Angular/React, which create black-box deps and overheads.
 * Includes one object type: Book
 * Includes the standard CRUD data management operations: Create, Read, Update, Delete
-* Enhanced by styling UI with CSS
+* Styling with CSS
 * Input via HTML forms
+* Form validation using HTML5 setCustomValidity and checkValidity
 
-**Objective**
+**Data Model**
 Manage information about books
+
+Data Validation Constrations
+* isbn: mandatory and unique book id with length 10 or 9 followed by X, type non empty string
+* title: mandatory, with max length 50, type non-empty string
+* year: mandatory, with interval constraint based on current year, type int
+* edition: optional, type positive int
 
 **Architecture**
 ![architecture.png](docs/architecture.png)
@@ -17,6 +24,7 @@ Manage information about books
 * Client side rendering
 * Persistent storage in 
 * Persistent storage in client device, managed using `Local Storage`. Other options include IndexDB.
+
 
 **Running from local**
 1. Use VSCode Live Server extension to launch live server.
@@ -46,7 +54,9 @@ Manage information about books
 #### Deprecated
 * `<menu>`: menu tag. Creates list of interactive menu items. Replaced by `<ul>`.
 
-
+#### Form Validation
+* setCustomValidity: marks form input fields as valid/invalid by assigning empty/non-empty string to it
+* checkValidity: invoked on form and tests if all input fields have a valid value
 
 ## JS Objects Overview
 

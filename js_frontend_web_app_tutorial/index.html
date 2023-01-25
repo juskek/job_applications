@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Minimal JS front-end App Example</title>
-  <script src="/src/ctrl/initialize.js"></script>
-  <script src="/src/model/Book.js"></script>
-</head>
-<body>
-  <h1>Public Library</h1>
-  <h2>An Example of a Minimal JavaScript front-end App</h2>
-  <p>This app supports the following operations:</p>
-  <ul>
-    <li><a href="src/view/listBooks.html"><button type="button">List all books</button></a></li>
-    <li><a href="src/view/createBook.html"><button type="button">Add a new book</button></a></li>
-    <li><a href="src/view/updateBook.html"><button type="button">Update a book</button></a></li>
-    <li><a href="src/view/deleteBook.html"><button type="button">Delete a book</button></a></li>
-    <li><button type="button" onclick="Book.clearData()">Clear database</button></li>
-    <li><button type="button" onclick="Book.createTestData()">Create test data</button></li>
-  </ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minimal JS front-end App Example</title>
+    <!-- Configure styling with Yahoo's Pure lib and main.css resource -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script src="/src/ctrl/initialize.js"></script>
+    <script src="/src/model/Book.js"></script>
+  </head>
+  <body>
+    <h1>Public Library</h1>
+    <h2>An Example of a Minimal JavaScript front-end App</h2>
+    <p>This app supports the following operations:</p>
+    <ul>
+      <li>
+        <a href="src/view/listBooks.html"
+          ><button type="button">List all books</button></a
+        >
+      </li>
+      <li>
+        <a href="src/view/createBook.html"
+          ><button type="button">Add a new book</button></a
+        >
+      </li>
+      <li>
+        <a href="src/view/updateBook.html"
+          ><button type="button">Update a book</button></a
+        >
+      </li>
+      <li>
+        <a href="src/view/deleteBook.html"
+          ><button type="button">Delete a book</button></a
+        >
+      </li>
+      <li>
+        <button type="button" onclick="Book.clearData()">Clear database</button>
+      </li>
+      <li>
+        <button type="button" onclick="Book.createTestData()">
+          Create test data
+        </button>
+      </li>
+    </ul>
+  </body>
 </html>
