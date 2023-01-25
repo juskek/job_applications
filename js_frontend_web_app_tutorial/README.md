@@ -17,6 +17,12 @@ Manage information about books
 * Client side rendering
 * Persistent storage in 
 * Persistent storage in client device, managed using `Local Storage`. Other options include IndexDB.
+
+**Running from local**
+1. Use VSCode Live Server extension to launch live server.
+2. Go to `127.0.0.1/portno/index.html` (local host ip, portno assigned by live server)
+
+* Logs can be viewed from dev tools Console in Chrome (F12)
 ## Step 1: HTML, CSS and JS
 
 **HTML Overview**
