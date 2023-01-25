@@ -1,4 +1,4 @@
-pl.view.createBook = {
+app.view.createBook = {
     setupUserInterface: function () {
         // Find save button from document object
         var saveButton = document.forms['Book'].commit;
@@ -6,7 +6,7 @@ pl.view.createBook = {
         Book.loadAll();
         // Call handleSavebutton when savebutton has click event
         saveButton.addEventListener("click",
-            pl.view.createBook.handleSaveButtonClickEvent);
+            app.view.createBook.handleSaveButtonClickEvent);
         // Save all books before window object, doc object and resources are unloaded.
         // Commonly used in confirm leave page
         window.addEventListener("beforeunload", function () {

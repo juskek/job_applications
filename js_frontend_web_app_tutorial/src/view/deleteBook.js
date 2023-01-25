@@ -1,4 +1,4 @@
-pl.view.deleteBook = {
+app.view.deleteBook = {
     setupUserInterface: function () {
         // Find delete button, dropdown list
         var deleteButton = document.forms['Book'].commit;
@@ -24,7 +24,7 @@ pl.view.deleteBook = {
         }
         // When delete button click event occurs, call function
         deleteButton.addEventListener("click",
-            pl.view.deleteBook.handleDeleteButtonClickEvent);
+            app.view.deleteBook.handleDeleteButtonClickEvent);
         // Before window/doc object and resources unload, save all books
         window.addEventListener("beforeunload", function () {
             Book.saveAll();

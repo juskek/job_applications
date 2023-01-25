@@ -1,4 +1,4 @@
-pl.view.updateBook = {
+app.view.updateBook = {
     setupUserInterface: function () {
       // find form, save button and select dropdown list
       var formEl = document.forms['Book'];
@@ -45,7 +45,7 @@ pl.view.updateBook = {
 
       // when save button is clicked, callback
       saveButton.addEventListener("click", 
-          pl.view.updateBook.handleUpdateButtonClickEvent);
+          app.view.updateBook.handleUpdateButtonClickEvent);
       // before window/doc object and resources are unloaded, save all books
       window.addEventListener("beforeunload", function () {
           Book.saveAll(); 

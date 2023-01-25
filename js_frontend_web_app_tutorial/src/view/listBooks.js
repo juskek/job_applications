@@ -1,7 +1,7 @@
 /**
  * View controller for listBooks.html
  */
-pl.view.listBooks = {
+app.view.listBooks = {
     setupUserInterface: function () {
         // Get tbody element from Document object of listBooks.html, where this script is loaded
         var tableBodyEl = document.querySelector("table#books>tbody");

@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <title>Minimal JS front-end App Example</title>
     <!-- Load scripts -->
-    <script src="src/ctrl/initialize.js"></script>
-    <script src="src/model/Book.js"></script>
-    <script src="src/view/listBooks.js"></script>
+    <script src="/src/ctrl/initialize.js"></script>
+    <script src="/src/model/Book.js"></script>
+    <script src="/src/view/listBooks.js"></script>
     <!-- On the open window, add a listener to run setupUserInterface on the "load" event,
          which is triggered when the whole page is loaded, including all dependent resources
         e.g. CSS, scripts, iframes, images  -->
     <script>
-      window.addEventListener("load", pl.view.listBooks.setupUserInterface);
+      window.addEventListener("load", app.view.listBooks.setupUserInterface);
     </script>
   </head>
   <body>
@@ -27,6 +27,6 @@
       <!-- Table body content managed by view controller -->
       <tbody></tbody>
     </table>
-    <nav><a href="index.html">Back to main menu</a></nav>
+    <nav><a href="/index.html">Back to main menu</a></nav>
   </body>
 </html>
