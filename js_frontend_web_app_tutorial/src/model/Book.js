@@ -79,9 +79,17 @@ Book.saveAll = function () {
  * Create and store new Book record in memory 
  */
 Book.add = function (slots) {
-    var book = new Book(slots);
-    Book.instances[slots.isbn] = book;
-    console.log("Book " + slots.isbn + " created!");
+    var book = null;
+    try {
+        book = new Book(slots);
+    } catch (e) {
+        console.log(e.name + ": " + e.message);
+        book = null;
+    }
+    if (book) {
+        Book.instances[book.isbn] = book;
+        console.log(book.toString() + " created!");
+    }
 };
 
 /**
