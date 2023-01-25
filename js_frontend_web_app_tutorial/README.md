@@ -39,6 +39,7 @@ XHTML5 is used as it has the clear syntax of XML docs over the liberal and confu
 * `<ul>`: unordered list. Contains items.
 * `<table>`: table. Header row in `<thead>`.  Row in `<tr>`. Header cell in `<th>` which can have scope column for column headers appearing in header row, and scope row for row header or index rows. Data in `<tbody>` and `<td>`
 * `<iframe>`: inline frame. Allows display of webpage within a webpage, i.e. .html doc in current .html doc
+* `<select>`: dropdown list with options.
 
 #### Deprecated
 * `<menu>`: menu tag. Creates list of interactive menu items. Replaced by `<ul>`.
