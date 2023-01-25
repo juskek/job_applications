@@ -120,6 +120,7 @@ Book.createTestData = function () {
     Book.instances["0465030793"] = new Book({ isbn: "0465030793", title: "I Am A Strange Loop", year: 2008 });
     Book.saveAll();
 };
+
 /**
  * Clear book records from persistent storage
  */
@@ -127,4 +128,45 @@ Book.clearData = function () {
     if (confirm("Do you really want to delete all book data?")) {
         localStorage["bookTable"] = "{}";
     }
+};
+/**
+ * Checks formatting of the provided isbn id.
+ * isbn needs to be a string of length 10 or length 9 appended with X
+ * 
+ * @param {*} id 
+ * @returns 
+ */
+Book.checkIsbnFormat = function (id) {
+    if (!id) {
+        return new NoConstraintViolation();
+    } else if (typeof (id) !== "string" || id.trim() === "") {
+        return new RangeConstraintViolation("The ISBN must be a non-empty string!");
+    } else if (!/\b\d{9}(\d|X)\b/.test(id)) {
+        return new PatternConstraintViolation(
+            'The ISBN must be a 10-digit string or a 9-digit string followed by "X"!');
+    } else {
+        return new NoConstraintViolation();
+    }
+};
+
+/**
+ * Checks uniqueness of provided isbn id
+ * 
+ * @param {*} id 
+ * @returns 
+ */
+Book.checkIsbnUnique = function (id) {
+    var constraintViolation = Book.checkIsbn(id);
+    if ((constraintViolation instanceof NoConstraintViolation)) {
+        if (!id) {
+            constraintViolation = new MandatoryValueConstraintViolation(
+                "A value for the ISBN must be provided!");
+        } else if (Book.instances[id]) {
+            constraintViolation = new UniquenessConstraintViolation(
+                "There is already a book record with this ISBN!");
+        } else {
+            constraintViolation = new NoConstraintViolation();
+        }
+    }
+    return constraintViolation;
 };
