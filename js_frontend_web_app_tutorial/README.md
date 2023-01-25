@@ -75,10 +75,11 @@ var person1 = {
 };
 ```
 
-A **namespace** encapsulates variables to prevent unwanted interaction, and can be defined using an untyped object, e.g.
+**Namespace** definition using untyped object/record
 ```
 var myApp = { model:{}, view:{}, ctrl:{} };
 ```
+
 A **typed object** instantiates a class, e.g.
 ```
 var o = new C(...)
