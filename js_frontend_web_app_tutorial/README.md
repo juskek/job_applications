@@ -62,6 +62,7 @@ A **map** is a set of key-value slots, where the key is a string, e.g.
 ```
 var numeral2number = { "one":1, "two":2, "three":3}
 ```
+Note that a map has string keys, while a record has JS identifier keys
 
 An **untyped object** does not instantiate a class, e.g,
 ```
@@ -84,24 +85,28 @@ var o = new C(...)
 ```
 Types can be retrieved using the following expression" `o.constructor.name  // returns "C"`
 
-A **class** is defined using a constructor function which accepts params, and assigning them to the class props, e.g.
+**Class** definition with **instance-level properties**:
 ```
 function Person( first, last) {
   this.firstName = first; 
   this.lastName = last; 
-}
+};
 ```
-Instance-level methods can be defined via function slots of the prototype object property of the constructor function, e.g.
+
+**Instance-level method** definition:
 ```
-Person.prototype.getInitials = function () {
+Person.prototype.someFunction = function () {
   return this.firstName.charAt(0) + this.lastName.charAt(0); 
-}
+};
 ```
-Class-level static methods can be defined via functions slots of the constructor function, e.g.
+
+**Class-level static member** definition:
 ```
-Person.checkName = function (n) {
+Person.someFunction = function (n) {
   ... 
-}
+};
+
+Person.someProperty = 1;
 ```
 
 
