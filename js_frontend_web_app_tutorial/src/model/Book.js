@@ -186,3 +186,8 @@ Book.prototype.setIsbn = function (id) {
         throw validationResult;
     }
 };
+
+Book.prototype.toString = function () {
+    return "Book{ ISBN:" + this.isbn + ", title:" +
+        this.title + ", year:" + this.year + "}";
+};
