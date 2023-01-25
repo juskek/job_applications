@@ -7,9 +7,17 @@
  * @param {Record} slots 
  */
 function Book(slots) {
-    this.isbn = slots.isbn;
-    this.title = slots.title;
-    this.year = slots.year;
+    // assign default values
+    this.isbn = "";   // string
+    this.title = "";  // string
+    this.year = 0;    // number (int)
+    // assign properties only if the constructor is invoked with an argument
+    if (arguments.length > 0) {
+        this.setIsbn(slots.isbn);
+        this.setTitle(slots.title);
+        this.setYear(slots.year);
+        if (slots.edition) this.setEdition(slots.edition); // optional attribute
+    }
 };
 
 // Class-level static properties 
