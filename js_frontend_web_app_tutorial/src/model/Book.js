@@ -96,13 +96,37 @@ Book.add = function (slots) {
  * Update an existing Book record in memory
  */
 Book.update = function (slots) {
-    var book = Book.instances[slots.isbn];
-    var year = parseInt(slots.year);
-    // Update title if it has been changed
-    if (book.title !== slots.title) { book.title = slots.title; }
-    // Update year if it has been changed
-    if (book.year !== year) { book.year = year; }
-    console.log("Book " + slots.isbn + " modified!");
+    var book = Book.instances[slots.isbn],
+        noConstraintViolated = true,
+        updatedProperties = [],
+        objectBeforeUpdate = util.cloneObject(book);
+    try {
+        if (book.title !== slots.title) {
+            book.setTitle(slots.title);
+            updatedProperties.push("title");
+        }
+        if (book.year !== parseInt(slots.year)) {
+            book.setYear(slots.year);
+            updatedProperties.push("year");
+        }
+        if (slots.edition && book.edition !== parseInt(slots.edition)) {
+            book.setEdition(slots.edition);
+            updatedProperties.push("edition");
+        }
+    } catch (e) {
+        console.log(e.name + ": " + e.message);
+        noConstraintViolated = false;
+        // restore object to its state before updating
+        Book.instances[slots.isbn] = objectBeforeUpdate;
+    }
+    if (noConstraintViolated) {
+        if (updatedProperties.length > 0) {
+            console.log("Properties " + updatedProperties.toString() +
+                " modified for book " + slots.isbn);
+        } else {
+            console.log("No property value changed for book " + slots.isbn + " !");
+        }
+    }
 };
 
 /**
