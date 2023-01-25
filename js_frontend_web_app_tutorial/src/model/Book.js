@@ -170,3 +170,19 @@ Book.checkIsbnUnique = function (id) {
     }
     return constraintViolation;
 };
+
+// Instance-level methods
+/**
+ * Sets isbn for this Book object
+ * 
+ * @param {*} id 
+ */
+Book.prototype.setIsbn = function (id) {
+    var validationResult = Book.checkIsbnUnique(id);
+    // instanceof checks if validationResult is of class  
+    if (validationResult instanceof NoConstraintViolation) {
+        this.isbn = id;
+    } else {
+        throw validationResult;
+    }
+};
