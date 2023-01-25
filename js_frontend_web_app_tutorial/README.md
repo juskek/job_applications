@@ -27,16 +27,11 @@ Manage information about books
 
 **HTML Overview**
 
-HTML = HTML5 = XHTML5
-
-XHTML5 is used, but may be represented as HTML or HTML5.
-
-XHTML5 is used as it has the clear syntax of XML docs over the liberal and confusing HTML4 syntax (that is also allowed by HTML5).
 * **Window Object**: Represents an open window in a browser.
 * **Document Object Model (DOM)**: In memory representation of .html doc. Allows doc structure, style and content to be changed via JS or CSS.
 * **Document Object**: Object created when .html is loaded into browser using DOM.
 #### Preamble
-* `<!DOCTYPE html>`: Doctype preamble. Tells browser what rendering mode to use. HTML is the modern standard but there are legacy standards used from before it was standardised.
+* `<!DOCTYPE html>`: Doctype preamble. Tells browser what rendering mode to use. HTML is the modern standard but there are legacy standards used from before it was standardised. Latest version (HTML5) is used unless specified
 * `<html>`: Root of html doc. Provides container for all html elements.
 
 #### Elements
